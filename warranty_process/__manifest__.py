@@ -1,6 +1,6 @@
 {
     'name': 'Warranty',
-    'version': '1.0',
+    'version': '17.1',
     'category': 'Sales',
     'author': "Chinedu Uzuegbu (Cesan)",
     'summary': 'Module to manage warranties linked with the repair module',
