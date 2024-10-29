@@ -1,0 +1,104 @@
+<odoo>
+
+    <!-- Form view for Product Warranty -->
+    <record id="view_product_warranty_form" model="ir.ui.view">
+        <field name="name">product.warranty.form</field>
+        <field name="model">product.warranty</field>
+        <field name="arch" type="xml">
+            <form string="Product Warranty">
+                <header>
+                    <button name="action_validate" type="object" string="Validate" class="oe_highlight" invisible="state != 'draft'"/>
+                    <button name="action_set_to_draft" type="object" string="Set to Draft" class="btn-secondary" invisible="state != 'validated'"/>
+                    <!-- Approval state status bar in header -->
+                    <field name="approval_state" widget="statusbar" statusbar_visible="draft,validated" class="oe_statusbar"/>
+                </header>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="state" invisible="1"/> <!-- Hidden field for state -->
+                        <field name="company_id" invisible="1" context="{'default_company_id': company_id}"/> <!-- Multi-company field -->
+                        <field name="customer_id" context="{'default_partner_id': customer_id}"/>
+                        <field name="sales_order_id" context="{'default_partner_id': customer_id}"/>
+                        <field name="delivery_order_id" context="{'default_sale_order_id': sales_order_id}"/>
+                        <field name="product_id"/>
+                        <field name="chassis_number_id" domain="[('product_id', '=', product_id)]"/> <!-- Updated field name -->
+                        <field name="registration_date"/>
+                        <field name="delivery_date" readonly="1"/>
+                        <field name="warranty_period"/>
+                        <field name="days_left" readonly="1"/>
+                        <field name="warranty_stage" readonly="1"/>
+                    </group>
+                </sheet>
+
+                <!-- Chatter section for messages and followers -->
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <!-- Tree view for Product Warranties -->
+    <record id="view_product_warranty_tree" model="ir.ui.view">
+        <field name="name">product.warranty.tree</field>
+        <field name="model">product.warranty</field>
+        <field name="arch" type="xml">
+            <tree string="Product Warranties">
+                <field name="name"/>
+                <field name="company_id"/> <!-- Displaying company field -->
+                <field name="customer_id"/>
+                <field name="sales_order_id"/>
+                <field name="delivery_order_id"/>
+                <field name="chassis_number_id"/> <!-- Updated field name -->
+                <field name="registration_date"/>
+                <field name="warranty_period"/>
+                <field name="days_left"/>
+                <field name="warranty_stage"/>
+                <field name="approval_state"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Sequence for Product Warranty reference -->
+    <record id="seq_product_warranty" model="ir.sequence">
+        <field name="name">Product Warranty</field>
+        <field name="code">product.warranty</field>
+        <field name="prefix">WRT/</field>
+        <field name="padding">4</field>
+        <field name="company_id" eval="False"/>
+    </record>
+
+    <!-- Action for Product Warranties -->
+    <record id="action_product_warranty" model="ir.actions.act_window">
+        <field name="name">Product Warranties</field>
+        <field name="res_model">product.warranty</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Scheduled action to update warranty days left -->
+    <record id="ir_cron_update_warranty_days_left" model="ir.cron">
+        <field name="name">Update Warranty Days Left</field>
+        <field name="model_id" ref="model_product_warranty"/>
+        <field name="state">code</field>
+        <field name="code">model.update_warranty_days_left()</field>
+        <field name="active" eval="True"/>
+        <field name="interval_number">1</field>
+        <field name="interval_type">days</field>
+        <field name="numbercall">-1</field>
+        <field name="doall" eval="False"/>
+    </record>
+
+    <!-- Menu for Warranty Process -->
+    <menuitem id="warranty_process_menu" name="Warranty" sequence="10" web_icon="warranty_process,static/description/icon.png"/>
+
+    <!-- Submenu for Product Warranties under Warranty Process -->
+    <menuitem id="warranty_menu" name="Product Warranties" parent="warranty_process_menu" action="action_product_warranty" sequence="1"/>
+
+    <!-- Record Rule to restrict access to company warranties -->
+    <record id="product_warranty_company_rule" model="ir.rule">
+        <field name="name">Product Warranty: Company Access</field>
+        <field name="model_id" ref="model_product_warranty"/>
+        <field name="domain_force">[('company_id', 'in', company_ids + [False])]</field>
+    </record>
+</odoo>

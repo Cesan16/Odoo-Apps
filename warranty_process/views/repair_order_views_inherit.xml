@@ -1,0 +1,21 @@
+<odoo>
+    <record id="view_repair_order_form_inherit" model="ir.ui.view">
+        <field name="name">repair.order.form.inherit.warranty</field>
+        <field name="model">repair.order</field>
+        <field name="inherit_id" ref="repair.view_repair_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//sheet/group" position="after">
+                <group>
+                    <!-- Warranty Status with colored backgrounds and bold text -->
+                    <field name="warranty_status" 
+                           style="font-weight: bold;"
+                           decoration-success="warranty_status == 'active'" 
+                           decoration-danger="warranty_status == 'expired'" 
+                           decoration-muted="warranty_status == 'no_warranty'"/>
+                    <field name="days_left" readonly="1"/>
+                    <field name="warranty_number" readonly="1"/>
+                </group>
+            </xpath>
+        </field>
+    </record>
+</odoo>
