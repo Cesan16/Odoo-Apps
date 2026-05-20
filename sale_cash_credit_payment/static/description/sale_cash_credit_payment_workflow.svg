@@ -1,0 +1,56 @@
+<svg width="1400" height="900" viewBox="0 0 1400 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1400" height="900" fill="#F6F1E7"/>
+  <rect x="60" y="40" width="1280" height="90" rx="24" fill="#173F35"/>
+  <text x="700" y="82" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="34" font-weight="700" fill="#FFFFFF">Sale Cash Credit Payment Workflow</text>
+  <text x="700" y="112" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#D8E8E2">Odoo 18 sales confirmation with cash and credit paths</text>
+
+  <rect x="110" y="180" width="320" height="120" rx="20" fill="#FFFFFF" stroke="#173F35" stroke-width="3"/>
+  <text x="270" y="220" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="24" font-weight="700" fill="#173F35">Create Quotation</text>
+  <text x="270" y="252" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#2F5249">Select customer and pricelist</text>
+  <text x="270" y="276" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#2F5249">Sales payment section appears</text>
+
+  <rect x="540" y="180" width="320" height="120" rx="20" fill="#FFFFFF" stroke="#173F35" stroke-width="3"/>
+  <text x="700" y="220" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="24" font-weight="700" fill="#173F35">Choose Sales Type</text>
+  <text x="700" y="252" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#2F5249">Cash or Credit is required</text>
+  <text x="700" y="276" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#2F5249">Cash shows the payment journal</text>
+
+  <rect x="970" y="180" width="320" height="120" rx="20" fill="#FFFFFF" stroke="#173F35" stroke-width="3"/>
+  <text x="1130" y="220" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="24" font-weight="700" fill="#173F35">Final Warning Popup</text>
+  <text x="1130" y="248" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#2F5249">Shows customer, pricelist,</text>
+  <text x="1130" y="272" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#2F5249">sales type, journal, total payable</text>
+
+  <path d="M430 240H540" stroke="#C46A2D" stroke-width="6" stroke-linecap="round"/>
+  <polygon points="540,240 520,228 520,252" fill="#C46A2D"/>
+  <path d="M860 240H970" stroke="#C46A2D" stroke-width="6" stroke-linecap="round"/>
+  <polygon points="970,240 950,228 950,252" fill="#C46A2D"/>
+
+  <rect x="560" y="370" width="280" height="110" rx="24" fill="#E9F4EF" stroke="#173F35" stroke-width="3"/>
+  <text x="700" y="412" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="24" font-weight="700" fill="#173F35">Confirm Order</text>
+  <text x="700" y="444" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#2F5249">Standard Odoo confirmation</text>
+
+  <path d="M1130 300V350H700V370" stroke="#C46A2D" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  <polygon points="700,370 688,350 712,350" fill="#C46A2D"/>
+
+  <path d="M700 480V555" stroke="#173F35" stroke-width="6" stroke-linecap="round"/>
+  <polygon points="700,555 688,535 712,535" fill="#173F35"/>
+
+  <rect x="120" y="580" width="470" height="220" rx="28" fill="#FFF8E8" stroke="#C46A2D" stroke-width="4"/>
+  <text x="355" y="625" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="28" font-weight="700" fill="#A34E18">Cash Flow</text>
+  <text x="355" y="665" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#6B3B16">1. Create normal Odoo delivery</text>
+  <text x="355" y="697" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#6B3B16">2. Create invoice</text>
+  <text x="355" y="729" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#6B3B16">3. Post invoice</text>
+  <text x="355" y="761" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#6B3B16">4. Register payment</text>
+  <text x="355" y="793" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#6B3B16">5. Reconcile payment to invoice</text>
+
+  <rect x="810" y="580" width="470" height="220" rx="28" fill="#EDF6FF" stroke="#2D6EA3" stroke-width="4"/>
+  <text x="1045" y="625" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="28" font-weight="700" fill="#1F4F78">Credit Flow</text>
+  <text x="1045" y="665" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#214968">1. Create normal Odoo delivery</text>
+  <text x="1045" y="697" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#214968">2. Create invoice</text>
+  <text x="1045" y="729" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#214968">3. Post invoice</text>
+  <text x="1045" y="761" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#214968">4. No payment registration</text>
+
+  <path d="M650 555C600 590 515 605 430 615" stroke="#C46A2D" stroke-width="6" stroke-linecap="round"/>
+  <polygon points="430,615 445,597 450,620" fill="#C46A2D"/>
+  <path d="M750 555C800 590 885 605 970 615" stroke="#2D6EA3" stroke-width="6" stroke-linecap="round"/>
+  <polygon points="970,615 950,605 955,628" fill="#2D6EA3"/>
+</svg>

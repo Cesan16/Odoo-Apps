@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_sale_confirm_warning_wizard_form" model="ir.ui.view">
+        <field name="name">sale.confirm.warning.wizard.form</field>
+        <field name="model">sale.confirm.warning.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Final Confirmation">
+                <sheet>
+                    <group>
+                        <div class="alert alert-warning" role="alert">
+                            <strong>Final confirmation check</strong>
+                            <br/>
+                            Please confirm the customer, pricelist, sales type, and payment journal before the sales order is confirmed.
+                        </div>
+                        <group>
+                            <field name="sale_order_id" readonly="1"/>
+                            <field name="partner_id" readonly="1"/>
+                            <field name="amount_total" readonly="1" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                            <field name="pricelist_id" readonly="1"/>
+                            <field name="sale_payment_type" readonly="1"/>
+                            <field name="cash_payment_journal_id" readonly="1" invisible="sale_payment_type != 'cash'"/>
+                        </group>
+                    </group>
+                    <footer>
+                        <button name="action_confirm_order" string="Confirm Sales Order" type="object" class="btn-primary"/>
+                        <button name="action_cancel" string="Cancel" type="object" special="cancel"/>
+                    </footer>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>
